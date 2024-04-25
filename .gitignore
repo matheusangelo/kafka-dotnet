@@ -1,0 +1,39 @@
+# .NET-specific
+bin/
+obj/
+*.user
+*.suo
+*.dll
+*.exe
+*.pdb
+*.cache
+*.log
+*.vscode
+.vs/
+/.vscode
+*.obj
+*.bin
+*.userprefs
+*.pidb
+*.sqlite
+*.sdf
+*.opensdf
+*.tlog
+*.tlog/
+*.log
+*.log/
+*.DS_Store
+
+# Visual Studio specific
+# .vscode (Visual Studio Code)
+.vscode/
+
+# Rider specific
+.idea/
+*.sln.iml
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
