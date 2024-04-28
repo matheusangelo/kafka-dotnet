@@ -5,8 +5,6 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Consumer", "App.Consumer\App.Consumer.csproj", "{83139962-59B7-44DD-95E1-B3213C232073}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.CrossCutting", "App.CrossCutting\App.CrossCutting.csproj", "{CD91EDC6-1A38-4D83-BD1F-81165B174919}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Domain", "App.Domain\App.Domain.csproj", "{0EBD9F85-3C36-4888-BCBC-7DA224EF2539}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Infra", "App.Infra\App.Infra.csproj", "{C771A943-39F8-457B-BAB8-87DBF3303515}"
