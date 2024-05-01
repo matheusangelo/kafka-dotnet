@@ -1,17 +1,22 @@
+using App.Application.Contracts;
+using App.Application.Services;
 using App.Infra.Contexts;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<Context>(opt => opt.UseOracle(builder.Configuration.GetConnectionString("OracleConnection")));
+
+builder.Services.AddTransient<IProducerService, ProducerService>();
+
+builder.Services.AddDbContext<Context>(
+    opt => opt.UseOracle(builder.Configuration.GetConnectionString("OracleConnection"))
+);
+
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

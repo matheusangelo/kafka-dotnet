@@ -6,5 +6,6 @@ namespace App.Domain.Repositories
         void Save(Message message);
         void Update(Message message);
         void Delete(Message message);
+        void Get(Message message);
     }
 }
