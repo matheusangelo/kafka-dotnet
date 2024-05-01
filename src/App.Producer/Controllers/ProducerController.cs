@@ -8,20 +8,10 @@ namespace App.Producer.Controllers;
 [Route("producer")]
 public class ProducerController : ControllerBase
 {
-    private readonly ILogger<ProducerController> _logger;
-
-    public ProducerController(ILogger<ProducerController> logger)
+    public ProducerController()
     {
-        _logger = logger;
     }
 
     [HttpPost(Name = "message")]
-    public IActionResult Get(
-        [FromServices] IProducerService message,
-        [FromBody] CreateMessageDTO body
-    )
-    {
-        message.CreateMessage(body);
-        return Ok("Initial Controller");
-    }
+    public IActionResult Get([FromServices] IProducerService message, [FromBody] CreateMessageDTO body) => Ok(message.CreateMessage(body));
 }
