@@ -5,11 +5,8 @@ namespace App.Infra.Repositories
 {
     public class MessageRepository : IMessageReposity
     {
-        public void Delete(Message message)
-        {
-        }
 
-        public void Get(Message message)
+        public void Delete(Message message)
         {
         }
 
@@ -19,6 +16,11 @@ namespace App.Infra.Repositories
 
         public void Update(Message message)
         {
+        }
+
+        Message IMessageReposity.Get(Message message)
+        {
+            throw new NotImplementedException();
         }
     }
 }

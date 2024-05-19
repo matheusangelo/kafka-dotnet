@@ -42,15 +42,28 @@ namespace App.Application.Services
 
             return entity;
         }
-
-        public Message ReprocessMessage(CreateMessageDTO dto)
-        {
-            throw new NotImplementedException();
-        }
-
         public Message UpdateMessage(CreateMessageDTO dto)
         {
-            throw new NotImplementedException();
+
+            Message entity = _mapper.Map<Message>(dto);
+
+            var validation = _validator.Validate(entity);
+            
+            if (!validation.IsValid){
+                throw new ValidationException(validation.Errors);
+            }
+            
+            var currentMessage = _messageRepository.Get(entity);
+ 
+             if (currentMessage is null){
+                throw new Exception($"MessageID {currentMessage?.Id} does not exists");
+            }
+
+            _adapter.CreateMessageProvider(entity);
+
+            _messageRepository.Update(entity);
+
+            return entity;
         }
     }
 }
