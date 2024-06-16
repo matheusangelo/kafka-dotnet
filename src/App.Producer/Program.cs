@@ -4,6 +4,7 @@ using App.Application.Services;
 using App.Domain.Entities;
 using App.Domain.Repositories;
 using App.Domain.Validators;
+using App.Infra.Adapters;
 using App.Infra.Contexts;
 using App.Infra.Repositories;
 using AutoMapper;
@@ -22,7 +23,7 @@ builder.Services.AddAutoMapper(typeof(IStartup), typeof(MapperConfig));
 //Services
 builder.Services.AddTransient<IProducerService, ProducerService>();
 builder.Services.AddTransient<IMessageReposity, MessageRepository>();
-
+builder.Services.AddSingleton<IBrokerAdapter, BrokerAdapter>();
 //Validators
 builder.Services.AddScoped<IValidator<Message>, MessageValidator>();
 
