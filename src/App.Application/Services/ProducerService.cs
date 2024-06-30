@@ -29,12 +29,14 @@ namespace App.Application.Services
         {
 
             Message entity = _mapper.Map<Message>(dto);
-
+            
             var validation = _validator.Validate(entity);
             
             if (!validation.IsValid){
                 throw new ValidationException(validation.Errors);
             }
+
+            entity.InsertedDate = DateTime.Now;
 
             _adapter.CreateMessageProvider(entity);
 

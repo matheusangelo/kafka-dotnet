@@ -9,7 +9,6 @@ namespace App.Infra.Configurations
         public void Configure(EntityTypeBuilder<Message> builder)
         {
             builder.ToTable("MESSAGE");
-
         
             builder.Property(p => p.Id)
                     .HasColumnName("ID");
@@ -25,6 +24,10 @@ namespace App.Infra.Configurations
             builder.Property(p => p.UpdatedDate)
                     .IsRequired()
                     .HasColumnName("DT_UPDATED");
+        
+            builder.Property(p => p.Status)
+                    .IsRequired()
+                    .HasColumnName("STATUS");
         }
     }
 }

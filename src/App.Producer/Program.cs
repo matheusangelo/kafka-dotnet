@@ -24,6 +24,7 @@ builder.Services.AddAutoMapper(typeof(IStartup), typeof(MapperConfig));
 builder.Services.AddTransient<IProducerService, ProducerService>();
 builder.Services.AddTransient<IMessageReposity, MessageRepository>();
 builder.Services.AddSingleton<IBrokerAdapter, BrokerAdapter>();
+
 //Validators
 builder.Services.AddScoped<IValidator<Message>, MessageValidator>();
 
